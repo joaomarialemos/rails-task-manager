@@ -1,0 +1,14 @@
+<h1>My tasks</h1>
+
+<div class="classificar" ">
+<% @tasks.each do |task| %>
+  <h4> <%= task.completed ? '☑️' : '🔲'  %>
+  <%= link_to task.title, task_path(task) %>
+  <%= link_to "± 🗑", task_path(task), method: :delete, data: { confirm: "Delete #{task.title}?" } %>
+  </h4>
+<% end %>
+</div>
+
+<div class="" >
+  <h4><%= link_to "+ Add new task", new_task_path %></h4>
+</div>
